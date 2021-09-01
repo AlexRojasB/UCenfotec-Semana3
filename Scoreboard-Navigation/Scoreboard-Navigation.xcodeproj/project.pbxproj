@@ -13,6 +13,8 @@
 		A50D6FE526DDA752005E9592 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A50D6FE326DDA752005E9592 /* Main.storyboard */; };
 		A50D6FE726DDA754005E9592 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A50D6FE626DDA754005E9592 /* Assets.xcassets */; };
 		A50D6FEA26DDA754005E9592 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A50D6FE826DDA754005E9592 /* LaunchScreen.storyboard */; };
+		A51FAF3026DF0BEE00B0171E /* AddPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51FAF2F26DF0BEE00B0171E /* AddPlayerViewController.swift */; };
+		A51FAF3226DF13AB00B0171E /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51FAF3126DF13AB00B0171E /* PlayersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		A50D6FE626DDA754005E9592 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A50D6FE926DDA754005E9592 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A50D6FEB26DDA754005E9592 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A51FAF2F26DF0BEE00B0171E /* AddPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerViewController.swift; sourceTree = "<group>"; };
+		A51FAF3126DF13AB00B0171E /* PlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,25 @@
 		A50D6FDC26DDA752005E9592 /* Scoreboard-Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				A51FAF2E26DF0BC000B0171E /* Controllers */,
 				A50D6FDD26DDA752005E9592 /* AppDelegate.swift */,
 				A50D6FDF26DDA752005E9592 /* SceneDelegate.swift */,
-				A50D6FE126DDA752005E9592 /* ViewController.swift */,
 				A50D6FE326DDA752005E9592 /* Main.storyboard */,
 				A50D6FE626DDA754005E9592 /* Assets.xcassets */,
 				A50D6FE826DDA754005E9592 /* LaunchScreen.storyboard */,
 				A50D6FEB26DDA754005E9592 /* Info.plist */,
 			);
 			path = "Scoreboard-Navigation";
+			sourceTree = "<group>";
+		};
+		A51FAF2E26DF0BC000B0171E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A50D6FE126DDA752005E9592 /* ViewController.swift */,
+				A51FAF2F26DF0BEE00B0171E /* AddPlayerViewController.swift */,
+				A51FAF3126DF13AB00B0171E /* PlayersViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +153,8 @@
 			files = (
 				A50D6FE226DDA752005E9592 /* ViewController.swift in Sources */,
 				A50D6FDE26DDA752005E9592 /* AppDelegate.swift in Sources */,
+				A51FAF3026DF0BEE00B0171E /* AddPlayerViewController.swift in Sources */,
+				A51FAF3226DF13AB00B0171E /* PlayersViewController.swift in Sources */,
 				A50D6FE026DDA752005E9592 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
