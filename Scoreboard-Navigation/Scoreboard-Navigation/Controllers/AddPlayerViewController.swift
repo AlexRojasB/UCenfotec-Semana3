@@ -8,16 +8,20 @@
 import UIKit
 
 class AddPlayerViewController: UITableViewController {
-    public var completionHandler: ((String?) -> Void)?
+    public var completionHandler: ((Player?) -> Void)?
+    var player = Player()
     @IBOutlet weak var detailLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
+    
     @IBAction func savePlayerTapped(_ sender: UIBarButtonItem) {
-        completionHandler?("pato")
+        completionHandler?(self.player)
         navigationController?.popViewController(animated: true)
+    }
+    @IBAction func NameEntered(_ sender: UITextField) {
+        self.player.name = sender.text!
     }
     
     @IBAction func cancelPlayerTapped(_ sender: Any) {
@@ -28,11 +32,12 @@ class AddPlayerViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let gamesViewController = mainStoryBoard.instantiateViewController(withIdentifier: "GamesViewController") as? GamesViewController else {
-            print("perro")
+            print("Something went wrong!")
             return
         }
-        gamesViewController.completionHandler = { text in
-            self.detailLabel.text = text
+        gamesViewController.completionHandler = { game in
+            self.player.game = game!
+            self.detailLabel.text = game
         }
         navigationController?.pushViewController(gamesViewController, animated: true)
     }
