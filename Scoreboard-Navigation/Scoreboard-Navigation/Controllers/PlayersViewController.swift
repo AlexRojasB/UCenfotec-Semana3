@@ -23,25 +23,27 @@ class PlayersViewController: UITableViewController {
     }
     
     @IBAction func addPlayerTapped(_ sender: Any) {
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let addPlayerViewController = mainStoryBoard.instantiateViewController(withIdentifier: "AddPlayerViewController") as? AddPlayerViewController else {
-            print("Something went wrong!")
-            return
+        if players.count < 10 {
+            let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            guard let addPlayerViewController = mainStoryBoard.instantiateViewController(withIdentifier: "AddPlayerViewController") as? AddPlayerViewController else {
+                print("Something went wrong!")
+                return
+            }
+            addPlayerViewController.completionHandler = { player in
+                self.players.append(player!)
+                self.tableView.reloadData()
+            }
+            navigationController?.pushViewController(addPlayerViewController, animated: true)
         }
-        addPlayerViewController.completionHandler = { player in
-            self.players.append(player!)
-            self.tableView.reloadData()
-        }
-        navigationController?.pushViewController(addPlayerViewController, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        // completionHandler?(games[indexPath.row])
-        navigationController?.popViewController(animated: true)
+        //navigationController?.popViewController(animated: true)
     }
     
    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return players.count
+        return players.count < 10 ? players.count : 10
     }
     
    override func numberOfSections(in tableView: UITableView) -> Int {

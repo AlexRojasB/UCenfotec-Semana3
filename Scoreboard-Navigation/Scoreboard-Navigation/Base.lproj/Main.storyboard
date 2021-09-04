@@ -154,7 +154,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ATA-FD-S16">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Carlos Antonio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ATA-FD-S16">
                                                     <rect key="frame" x="10" y="5" width="394" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -201,6 +201,71 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="Cwb-hw-NWo">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lve-Di-YUu">
+                                        <rect key="frame" x="0.0" y="208.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lve-Di-YUu" id="HbM-vq-tf5">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="9TT-R7-Xbz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4N-0l-oTz">
+                                                            <rect key="frame" x="0.0" y="0.0" width="83" height="43.5"/>
+                                                            <color key="tintColor" systemColor="systemYellowColor"/>
+                                                            <state key="normal" image="star.fill" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="clickStar:" destination="SbT-hq-GOt" eventType="touchUpInside" id="Ck7-2q-FzH"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbn-vR-Nkj">
+                                                            <rect key="frame" x="83" y="0.0" width="82.5" height="43.5"/>
+                                                            <color key="tintColor" systemColor="systemYellowColor"/>
+                                                            <state key="normal" image="star.fill" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="clickStar:" destination="SbT-hq-GOt" eventType="touchUpInside" id="UPO-Rt-Qz6"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTc-SC-Nx9">
+                                                            <rect key="frame" x="165.5" y="0.0" width="83" height="43.5"/>
+                                                            <color key="tintColor" systemColor="systemYellowColor"/>
+                                                            <state key="normal" image="star.fill" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="clickStar:" destination="SbT-hq-GOt" eventType="touchUpInside" id="gdp-lf-LCe"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QI5-UI-vMF">
+                                                            <rect key="frame" x="248.5" y="0.0" width="82.5" height="43.5"/>
+                                                            <color key="tintColor" systemColor="systemYellowColor"/>
+                                                            <state key="normal" image="star.fill" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="clickStar:" destination="SbT-hq-GOt" eventType="touchUpInside" id="ReX-Er-327"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFV-E4-otA">
+                                                            <rect key="frame" x="331" y="0.0" width="83" height="43.5"/>
+                                                            <color key="tintColor" systemColor="systemYellowColor"/>
+                                                            <state key="normal" image="star.fill" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="clickStar:" destination="SbT-hq-GOt" eventType="touchUpInside" id="8bv-Pw-cu6"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9TT-R7-Xbz" firstAttribute="top" secondItem="HbM-vq-tf5" secondAttribute="top" id="6Hf-SJ-ysI"/>
+                                                <constraint firstItem="9TT-R7-Xbz" firstAttribute="leading" secondItem="HbM-vq-tf5" secondAttribute="leading" id="81t-lh-Rd5"/>
+                                                <constraint firstAttribute="bottom" secondItem="9TT-R7-Xbz" secondAttribute="bottom" id="8be-St-Ue7"/>
+                                                <constraint firstAttribute="trailing" secondItem="9TT-R7-Xbz" secondAttribute="trailing" id="Ibx-mJ-ivL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="SbT-hq-GOt" id="Bcl-a1-8XG"/>
@@ -221,6 +286,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="detailLabel" destination="sHX-PO-6al" id="gAA-IU-SgF"/>
+                        <outlet property="star2" destination="Cbn-vR-Nkj" id="TwK-vF-zL5"/>
+                        <outlet property="star3" destination="lTc-SC-Nx9" id="ihy-kF-8eq"/>
+                        <outlet property="star4" destination="QI5-UI-vMF" id="Ew4-yZ-IMD"/>
+                        <outlet property="star5" destination="uFV-E4-otA" id="7U1-Ll-mCg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y5M-zQ-wmg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -297,8 +366,12 @@
     <resources>
         <image name="Gestures" width="30" height="30"/>
         <image name="Players" width="30" height="30"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

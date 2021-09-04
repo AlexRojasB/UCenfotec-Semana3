@@ -39,8 +39,8 @@ class GamesViewController: UITableViewController {
     }
     
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "row", for: indexPath)
-        cell.textLabel?.text = games[indexPath.row]
-        return cell
+        let row = tableView.dequeueReusableCell(withIdentifier: "row", for: indexPath)
+        row.textLabel?.text = games[indexPath.row]
+        return row
     }
 }
