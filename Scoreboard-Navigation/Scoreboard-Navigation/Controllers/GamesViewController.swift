@@ -8,7 +8,7 @@
 import UIKit
 
 class GamesViewController: UITableViewController {
-    public var completionHandler: ((String?) -> Void)?
+    var previousGame = String()
     
     let games = [
         "La carrera de lames",
@@ -26,7 +26,8 @@ class GamesViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        completionHandler?(games[indexPath.row])
+        let game = self.games[indexPath.row]
+        NotificationCenter.default.post(name: Notification.Name("getGame"), object: game)
         navigationController?.popViewController(animated: true)
     }
     
@@ -39,8 +40,13 @@ class GamesViewController: UITableViewController {
     }
     
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = tableView.dequeueReusableCell(withIdentifier: "row", for: indexPath)
-        row.textLabel?.text = games[indexPath.row]
-        return row
+    let row = tableView.dequeueReusableCell(withIdentifier: "row", for: indexPath)
+    let game = games[indexPath.row]
+    row.textLabel?.text = game
+    if game == previousGame {
+        row.accessoryType = .checkmark
+    }
+    
+    return row
     }
 }

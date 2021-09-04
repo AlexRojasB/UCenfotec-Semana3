@@ -10,9 +10,8 @@ import UIKit
 class PlayersViewController: UITableViewController {
     public var completionHandler: ((Player?) -> Void)?
     var players = [
-        Player(name: "Antonio Lames", game: "La carrera de lames", stars: 3),
         Player(name: "Federico Mignon", game: "Comer carnes"),
-        Player(name: "Calle 13", game: "La cantada", stars: 4)
+        Player(name: "Calle 13", game: "Cantando como el DaddyY", stars: 4)
     ]
     
     override func viewDidLoad() {
@@ -31,6 +30,9 @@ class PlayersViewController: UITableViewController {
             }
             addPlayerViewController.completionHandler = { player in
                 self.players.append(player!)
+                self.players.sort { (player1, player2) in
+                    player1.stars >= player2.stars
+                }
                 self.tableView.reloadData()
             }
             navigationController?.pushViewController(addPlayerViewController, animated: true)
@@ -38,8 +40,20 @@ class PlayersViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       // completionHandler?(games[indexPath.row])
-        //navigationController?.popViewController(animated: true)
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        guard let addPlayerViewController = mainStoryBoard.instantiateViewController(withIdentifier: "AddPlayerViewController") as? AddPlayerViewController else {
+            print("Something went wrong!")
+            return
+        }
+        addPlayerViewController.player = self.players[indexPath.row]
+        addPlayerViewController.completionHandler = { player in
+            self.players[indexPath.row] = player!
+            self.players.sort { (player1, player2) in
+                player1.stars >= player2.stars
+            }
+            self.tableView.reloadData()
+        }
+        navigationController?.pushViewController(addPlayerViewController, animated: true)
     }
     
    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,7 +69,6 @@ class PlayersViewController: UITableViewController {
     cell.nameLabel.text = players[indexPath.row].name
     cell.gameLabel.text = players[indexPath.row].game
     cell.starsImage.image = UIImage(named: "\(players[indexPath.row].stars)Stars")
-      //  cell.textLabel?.text = games[indexPath.row]
         return cell
     }
     

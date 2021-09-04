@@ -10,6 +10,7 @@ struct Player{
     var name: String
     var game: String
     var stars: Int
+    var updatedAt: Date = Date()
     
     init(name: String = "", game: String = "", stars: Int = 5) {
         self.name = name

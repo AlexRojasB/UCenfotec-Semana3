@@ -11,18 +11,42 @@ class AddPlayerViewController: UITableViewController {
     public var completionHandler: ((Player?) -> Void)?
     var player = Player()
     @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var star2: UIButton!
     @IBOutlet weak var star3: UIButton!
     @IBOutlet weak var star4: UIButton!
     @IBOutlet weak var star5: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+       NotificationCenter.default.addObserver(self, selector: #selector(didGetNotification(_:)), name: Notification.Name("getGame"), object: nil)
+        self.nameTextField.text = "\(self.player.name)"
+        self.detailLabel.text = "\(self.player.game)"
+         switch self.player.stars {
+         case 2:
+             clickStar(star2)
+         case 3:
+             clickStar(star3)
+         case 4:
+             clickStar(star4)
+         case 5:
+             clickStar(star5)
+         default:
+             clickStar(UIButton())
+         }
+    }
+    
+    @objc func didGetNotification(_ notification:Notification) {
+        let game = notification.object as! String?
+        self.player.game = game!
+        self.detailLabel.text = game
     }
     
     @IBAction func savePlayerTapped(_ sender: UIBarButtonItem) {
-        completionHandler?(self.player)
-        navigationController?.popViewController(animated: true)
+        if self.player.name != "" && self.player.game != "" {
+            player.updatedAt = Date()
+            completionHandler?(self.player)
+            navigationController?.popViewController(animated: true)
+        }
     }
     @IBAction func NameEntered(_ sender: UITextField) {
         self.player.name = sender.text!
@@ -76,10 +100,7 @@ class AddPlayerViewController: UITableViewController {
                 print("Something went wrong!")
                 return
             }
-            gamesViewController.completionHandler = { game in
-                self.player.game = game!
-                self.detailLabel.text = game
-            }
+            gamesViewController.previousGame = self.player.game
             navigationController?.pushViewController(gamesViewController, animated: true)
         }
        

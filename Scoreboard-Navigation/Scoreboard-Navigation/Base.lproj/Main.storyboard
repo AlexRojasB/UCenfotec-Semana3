@@ -286,6 +286,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="detailLabel" destination="sHX-PO-6al" id="gAA-IU-SgF"/>
+                        <outlet property="nameTextField" destination="ATA-FD-S16" id="86Z-kd-kQO"/>
                         <outlet property="star2" destination="Cbn-vR-Nkj" id="TwK-vF-zL5"/>
                         <outlet property="star3" destination="lTc-SC-Nx9" id="ihy-kF-8eq"/>
                         <outlet property="star4" destination="QI5-UI-vMF" id="Ew4-yZ-IMD"/>
